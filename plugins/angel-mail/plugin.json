@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "angel-mail",
+  "version": "1.0.0",
+  "description": "Your Angel Mail inbox in your AI assistant: read, search and triage your email, and draft replies that wait in Angel Mail for you to review and send.",
+  "author": { "name": "Angel Mail", "email": "angel@angelmail.io", "url": "https://angelmail.io" },
+  "homepage": "https://angelmail.io",
+  "repository": "https://github.com/PirateKing44/angel-mail-plugins",
+  "license": "MIT",
+  "keywords": ["email", "gmail", "drafts", "inbox", "triage"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Angel Mail",
+        "shortDescription": "Your email, drafted by your assistant, sent by you.",
+        "longDescription": "Connect your Angel Mail inbox. Ask what needs a reply, search and read conversations, sort the inbox into a batch of suggestions you approve, and have replies drafted for you. Every draft and every send request waits in Angel Mail's Agent drafts until you review it and press Send yourself.",
+        "developerName": "Angel Mail",
+        "category": "Productivity",
+        "capabilities": ["Read", "Write"],
+        "websiteURL": "https://angelmail.io",
+        "supportURL": "https://angelmail.io",
+        "privacyPolicyURL": "https://angelmail.io/privacy",
+        "termsOfServiceURL": "https://angelmail.io/terms",
+        "defaultPrompt": [
+          "What in my inbox needs a reply today?",
+          "Draft a reply to the latest email from Jordan.",
+          "Go through my inbox and suggest what to archive."
+        ],
+        "brandColor": "#004D2B",
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/icon.png"
+      }
+    }
+  }
+}
