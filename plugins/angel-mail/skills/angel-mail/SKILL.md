@@ -14,7 +14,7 @@ Angel Mail connects the user's Gmail inboxes to you through its MCP server (`ang
 
 ## Writing
 
-Nothing you write is sent by you. Every draft waits in Angel Mail → **Agent drafts** until the user reviews it and presses Send.
+Drafts and send requests wait in Angel Mail → **Agent drafts** for the user to review. By default, the user sends them there. A connection with sending enabled may send only through the approval flow below.
 
 - `create_draft` when the email needs the user's touch, `request_send` when you think it is ready to go. Both return a `review_url`: give it to the user and tell them the draft is waiting there.
 - `wait_for_review` waits up to 50 seconds for their decision; `get_draft_review` shows what they did: sent it, edited it, or sent it back with a note. If they sent it back, `revise_draft` replaces it with the next version.

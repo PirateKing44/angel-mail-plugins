@@ -1,6 +1,6 @@
 # Angel Mail plugins
 
-The Angel Mail plugin for Claude, ChatGPT, Cursor and Grok Bot. It connects your assistant to your Angel Mail inbox through Angel Mail's MCP server (`https://app.angelmail.io/mcp`), with a skill that explains how to use it. Everything the assistant writes waits in Angel Mail → Agent drafts until you send it.
+The Angel Mail plugin for Claude, ChatGPT, Cursor and Grok Bot. It connects your assistant to your Angel Mail inbox through Angel Mail's MCP server (`https://app.angelmail.io/mcp`), with a skill that explains how to use it. Drafts and send requests wait in Angel Mail → Agent drafts for your review, and by default you send them yourself. If you allow a connection to send, the assistant can send only after showing you the full email and getting your explicit yes for that exact email.
 
 The plugin is in [`plugins/angel-mail/`](plugins/angel-mail/README.md). One folder serves every app:
 

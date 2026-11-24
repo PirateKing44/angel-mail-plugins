@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "angel-mail",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Your Angel Mail inbox in your AI assistant: read, search and triage your email, and draft replies that wait in Angel Mail for you to review and send.",
   "author": {
     "name": "Angel Mail",
@@ -23,7 +23,7 @@
       "interface": {
         "displayName": "Angel Mail",
         "shortDescription": "Email drafts you approve",
-        "longDescription": "Connect your Angel Mail inbox. Ask what needs a reply, search and read conversations, sort the inbox into a batch of suggestions you approve, and have replies drafted for you. Every draft and every send request waits in Angel Mail's Agent drafts until you review it and press Send yourself.",
+        "longDescription": "Connect your Angel Mail inbox. Ask what needs a reply, search and read conversations, sort the inbox into a batch of suggestions you approve, and have replies drafted for you. Drafts and send requests wait in Angel Mail's Agent drafts for your review. By default, you send them yourself in Angel Mail. If you enable sending for a connection, your assistant can send only after showing the full email preview and receiving your explicit approval for that exact email.",
         "developerName": "Angel Mail",
         "category": "Productivity",
         "capabilities": [
@@ -79,7 +79,7 @@
           ],
           "negative": [
             {
-              "description": "Sending without the user's approval: the connection may only queue, so the email waits in Agent drafts for the user to press Send",
+              "description": "Sending without explicit approval of the full email preview: request_send queues a review request; send_approved_email requires a connection with sending enabled and the user's explicit approval for that exact email after the preview is shown. Otherwise the email stays in Agent drafts.",
               "prompt": "Send this email to bob@example.com right now."
             },
             {
@@ -99,7 +99,7 @@
         "countries": [
           "US"
         ],
-        "release_notes": "First release: search and read your email, sort the inbox into suggestions you approve, set reminders, and draft replies that wait in Angel Mail for you to review and send."
+        "release_notes": "1.0.3: Clarify that drafts and send requests wait for review by default; optional sending requires an enabled connection and explicit approval of the exact email after its full preview. No server behavior changes."
       }
     }
   }

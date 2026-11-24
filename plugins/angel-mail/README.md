@@ -1,6 +1,6 @@
 # Angel Mail plugin
 
-Angel Mail is an email client for people who work with AI assistants. This plugin connects your Angel Mail account to Claude, ChatGPT, Cursor and Grok Bot, so your assistant can read, search and triage your Gmail inboxes and draft replies for you. Nothing is ever sent on its own: every draft and every send request waits in Angel Mail → Agent drafts until you review it and press Send yourself.
+Angel Mail is an email client for people who work with AI assistants. This plugin connects your Angel Mail account to Claude, ChatGPT, Cursor and Grok Bot, so your assistant can read, search and triage your Gmail inboxes and draft replies for you. Drafts and send requests wait in Angel Mail → Agent drafts for review. By default, you send them there yourself. If you enable sending for a connection, your assistant can send only after showing the full email preview and receiving your explicit approval for that exact email.
 
 ## Install
 
