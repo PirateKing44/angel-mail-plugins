@@ -1,6 +1,6 @@
 {
   "name": "angel-mail",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Your Angel Mail inbox in your AI assistant: read, search and triage your email, and draft replies that wait in Angel Mail for you to review and send.",
   "author": {
     "name": "Angel Mail",
@@ -16,7 +16,7 @@
     "inbox",
     "triage"
   ],
-  "logo": "assets/logo.svg",
+  "logo": "assets/icon.png",
   "skills": "./skills/",
   "mcpServers": "./cursor-mcp.json"
 }

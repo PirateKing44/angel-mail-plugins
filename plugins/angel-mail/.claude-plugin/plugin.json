@@ -1,8 +1,9 @@
 {
   "name": "angel-mail",
   "displayName": "Angel Mail",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Your Angel Mail inbox in your AI assistant: read, search and triage your email, and draft replies that wait in Angel Mail for you to review and send.",
+  "icon": "assets/icon.png",
   "author": {
     "name": "Angel Mail",
     "url": "https://angelmail.io"
