@@ -1,0 +1,13 @@
+{
+  "name": "angel-mail",
+  "version": "1.1.0",
+  "description": "Angel Mail in Gemini CLI: read, search, and triage linked Gmail inboxes, and draft replies that wait in Angel Mail until you send them. Connects to the hosted Angel Mail MCP server and loads the Angel Mail skill.",
+  "contextFileName": "GEMINI.md",
+  "mcpServers": {
+    "angel-mail": {
+      "url": "https://app.angelmail.io/mcp",
+      "type": "http",
+      "description": "Official Angel Mail MCP server (hosted, Streamable HTTP). Gemini CLI opens Angel Mail to sign in on first use. No token in this file."
+    }
+  }
+}

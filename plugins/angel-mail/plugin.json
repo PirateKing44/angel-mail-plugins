@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "angel-mail",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Your Angel Mail inbox in your AI assistant: read, search and triage your email, and draft replies that wait in Angel Mail for you to review and send.",
   "author": { "name": "Angel Mail", "email": "angel@angelmail.io", "url": "https://angelmail.io" },
   "homepage": "https://angelmail.io",

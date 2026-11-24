@@ -1,7 +1,7 @@
 {
   "name": "angel-mail",
   "owner": { "name": "Angel Mail", "email": "angel@angelmail.io" },
-  "metadata": { "description": "Angel Mail for Cursor and Grok Bot" },
+  "metadata": { "description": "Angel Mail for Cursor" },
   "plugins": [
     { "name": "angel-mail", "source": "plugins/angel-mail", "description": "Your Angel Mail inbox in your AI assistant: read, search and triage your email, and draft replies that wait in Angel Mail for you to review and send." }
   ]

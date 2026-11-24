@@ -1,0 +1,36 @@
+{
+  "account": "alex@example.com",
+  "title": "Newsletters you never open",
+  "rationale": "Six senders, none opened in 30 days.",
+  "items": [
+    {
+      "thread_id": "t31",
+      "action": "unsubscribe",
+      "reason": "8 emails in 30 days, all unread"
+    },
+    {
+      "thread_id": "t32",
+      "action": "done",
+      "reason": "Shipping notice, delivered"
+    },
+    {
+      "thread_id": "t33",
+      "action": "remind",
+      "when": "monday 9am",
+      "condition": "if_no_reply",
+      "reason": "Waiting on the signed contract"
+    },
+    {
+      "thread_id": "t34",
+      "action": "label",
+      "label": "Receipts",
+      "reason": "Invoice"
+    },
+    {
+      "thread_id": "t35",
+      "action": "reply",
+      "body": "Thanks, got it.",
+      "reason": "Asked to confirm receipt"
+    }
+  ]
+}
