@@ -3,7 +3,17 @@
   "mcpServers": {
     "angel-mail": {
       "type": "streamable-http",
-      "url": "https://app.angelmail.io/mcp"
+      "url": "https://app.angelmail.io/mcp",
+      "extensions": {
+        "com.openai": {
+          "auth": {
+            "type": "oauth",
+            "client": {
+              "mode": "dcr"
+            }
+          }
+        }
+      }
     }
   }
 }

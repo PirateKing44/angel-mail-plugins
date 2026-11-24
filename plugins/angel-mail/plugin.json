@@ -1,22 +1,35 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "angel-mail",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Your Angel Mail inbox in your AI assistant: read, search and triage your email, and draft replies that wait in Angel Mail for you to review and send.",
-  "author": { "name": "Angel Mail", "email": "angel@angelmail.io", "url": "https://angelmail.io" },
+  "author": {
+    "name": "Angel Mail",
+    "email": "angel@angelmail.io",
+    "url": "https://angelmail.io"
+  },
   "homepage": "https://angelmail.io",
   "repository": "https://github.com/PirateKing44/angel-mail-plugins",
   "license": "MIT",
-  "keywords": ["email", "gmail", "drafts", "inbox", "triage"],
+  "keywords": [
+    "email",
+    "gmail",
+    "drafts",
+    "inbox",
+    "triage"
+  ],
   "extensions": {
     "com.openai": {
       "interface": {
         "displayName": "Angel Mail",
-        "shortDescription": "Your email, drafted by your assistant, sent by you.",
+        "shortDescription": "Email drafts you approve",
         "longDescription": "Connect your Angel Mail inbox. Ask what needs a reply, search and read conversations, sort the inbox into a batch of suggestions you approve, and have replies drafted for you. Every draft and every send request waits in Angel Mail's Agent drafts until you review it and press Send yourself.",
         "developerName": "Angel Mail",
         "category": "Productivity",
-        "capabilities": ["Read", "Write"],
+        "capabilities": [
+          "Read",
+          "Write"
+        ],
         "websiteURL": "https://angelmail.io",
         "supportURL": "https://angelmail.io",
         "privacyPolicyURL": "https://angelmail.io/privacy",
@@ -29,6 +42,64 @@
         "brandColor": "#004D2B",
         "composerIcon": "./assets/icon.png",
         "logo": "./assets/icon.png"
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "List today's email",
+              "prompt": "What emails came in today?",
+              "tools_triggered": "search_mail",
+              "expected_behavior": "A list of today's conversations with sender and subject for each."
+            },
+            {
+              "description": "Read and summarise one conversation",
+              "prompt": "Open the email asking about the meeting and summarise it.",
+              "tools_triggered": "search_mail, get_thread",
+              "expected_behavior": "A short summary of that conversation: who wrote, what they ask and any dates mentioned."
+            },
+            {
+              "description": "Draft a reply that waits for review",
+              "prompt": "Draft a reply to the meeting email saying Thursday works.",
+              "tools_triggered": "get_thread, create_draft",
+              "expected_behavior": "A draft reply saved in Angel Mail's Agent drafts and a review_url to open it. Nothing is sent."
+            },
+            {
+              "description": "Suggest inbox clean-up",
+              "prompt": "Suggest what to archive in my inbox.",
+              "tools_triggered": "triage_candidates, propose_actions",
+              "expected_behavior": "A batch of suggestions in Angel Mail's Agent proposals, each with a reason. Nothing is archived until the user approves it."
+            },
+            {
+              "description": "Set a follow-up reminder",
+              "prompt": "Remind me about the invoice email on Friday if nobody replies.",
+              "tools_triggered": "search_mail, set_reminder",
+              "expected_behavior": "A reminder on that conversation for Friday, if no reply; list_reminders shows it."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Sending without the user's approval: the connection may only queue, so the email waits in Agent drafts for the user to press Send",
+              "prompt": "Send this email to bob@example.com right now."
+            },
+            {
+              "description": "Mass deletion: the plugin has no delete tool; at most a trash proposal the user approves item by item",
+              "prompt": "Delete every email in my inbox."
+            },
+            {
+              "description": "An inbox that isn't linked to the signed-in account: the server refuses and returns no mail from it",
+              "prompt": "Read my other inbox, sam@example.com."
+            }
+          ]
+        },
+        "commerce": false,
+        "commerce_description": "The plugin sells nothing and takes no payments in ChatGPT."
+      },
+      "publication": {
+        "countries": [
+          "US"
+        ],
+        "release_notes": "First release: search and read your email, sort the inbox into suggestions you approve, set reminders, and draft replies that wait in Angel Mail for you to review and send."
       }
     }
   }
